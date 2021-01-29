@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <title>Telelphone</title>
+         <script>
+             function val()
+             {
+                 var t1=document.getElementById("t1");
+                 var div=document.getElementById("div");
+                 var v=t1.value;
+                 if(v=="")
+                 {
+                     div.innerHTML="veuillez remplir..";
+                     return;
+                 }
+                 var r=/^[0-9]{10}$/g;
+                 if(r.test(v)==false)
+                 {
+                     div.innerHTML="don't use caracters..";
+                     return;
+                 }
+                 var rg=new RegExp("^(06)[0-9]{8}$","g");
+                 if(rg.test(v)==false)
+                 {
+                    div.innerHTML="tele est non valide";
+                 }
+                 else{
+                      div.innerHTML="tele est valide";
+                 }
+                
+             }
+         </script>
+    </head>
+    <body>
+        <div style="border: dotted green; width: 20%;">
+          <label for="t1">entrer votre telephone:</label>
+          <input type="text" id="t1"/>
+          <br/>
+          <input type="button" value="valider" onclick="val();"/>
+          <div id="div" style="background-color: red; width: 50%;">message</div>
+        </div>
+     
+    </body>
+</html>
